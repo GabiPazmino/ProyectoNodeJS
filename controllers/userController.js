@@ -8,14 +8,23 @@ function getAllUsers(req, res) {
 
     User.find()
         .then(users => {
-            res.json(users); // Devolvemos los todos los usuarios
+            return res.status(200).send({
+                status: 200,
+                message: "Usuarios desplegados",
+                data: users
+            }); // Devolvemos los todos los usuarios
         })
         .catch(error => {
             console.error(error);
-            res.status(500).send("Error al obtener los usuarios");
+            return res.status(500).send({
+                status: 500,
+                message: "Error al obtener los usuarios"
+            });
         });
 
 }
+
+
 
 // funcion para crear un nuevo usuario
 function createUser(req, res) {

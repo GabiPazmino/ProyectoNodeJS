@@ -4,7 +4,7 @@ const bcryptService = require('../services/bcryptService');
 
 // Definimos el esquema
 
-const userSchema = new mongoose .Schema({
+const userSchema = new mongoose.Schema({
     nombre: {
         type: String,
         required: true
